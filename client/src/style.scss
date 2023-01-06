@@ -4,7 +4,7 @@ $lightGreen: #b9e7e7;
   display: flex;
   justify-content: center;
   .container {
-    width: 1024px;
+    width: 90%;
 
     .link {
       text-decoration: none;
@@ -67,11 +67,11 @@ $lightGreen: #b9e7e7;
       .container {
         padding: 10px 0px;
         display: flex;
-        align-items: center;
+        // align-items: center;
         justify-content: space-between;
         .logo {
           img {
-            width: 120px;
+            width: 75%;//120px;
           }
         }
         .links {
@@ -383,4 +383,40 @@ $lightGreen: #b9e7e7;
       }
     }
   }
+}
+
+
+@media only screen and (max-width:690px){
+  .app{
+    .container{
+      .navbar{
+        .container{
+          .logo{
+            img{
+              width:100px;
+            }          
+          }
+          .links{
+            margin-left:30px
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:570px){
+  .app{
+    .container{
+      .navbar{
+        .container{
+          #horizontal-navbar{
+            display:none;
+          }
+        }
+         
+      }
+    }
+  }
+  
 }
