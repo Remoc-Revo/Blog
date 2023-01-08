@@ -7,8 +7,8 @@ const Navbar = () => {
   const { currentUser, logout } = useContext(AuthContext);
   const [isNavExpanded,setIsNavExpanded]=useState(false);
 
-  function toggleNav(){
-    isNavExpanded=!isNavExpanded;
+  function collapseNav(){
+    isNavExpanded=false;
   }
 
   return (
@@ -23,33 +23,33 @@ const Navbar = () => {
         
 
         <div className="links" >
-          <Link className="link" to="/?cat=art">
+          <Link className="link" to="/?cat=art" onClick={()=>{collapseNav()}}>
             <h6>ART</h6>
           </Link>
-          <Link className="link" to="/?cat=science">
+          <Link className="link" to="/?cat=science" onClick={()=>{collapseNav()}}>
             <h6>SCIENCE</h6>
           </Link>
-          <Link className="link" to="/?cat=technology">
+          <Link className="link" to="/?cat=technology" onClick={()=>{collapseNav()}}>
           </Link>
-          <Link className="link" to="/?cat=cinema">
+          <Link className="link" to="/?cat=cinema" onClick={()=>{collapseNav()}}>
             <h6>CINEMA</h6>
           </Link>
-          <Link className="link" to="/?cat=design">
+          <Link className="link" to="/?cat=design" onClick={()=>{collapseNav()}}>
             <h6>DESIGN</h6>
           </Link>
-          <Link className="link" to="/?cat=food">
+          <Link className="link" to="/?cat=food" onClick={()=>{collapseNav()}}>
             <h6>FOOD</h6>
           </Link>
           <span>{currentUser?.username}</span>
           {currentUser ? (
             <span onClick={logout}>Logout</span>
           ) : (
-            <Link className="link" to="/login">
+            <Link className="link" to="/login" onClick={()=>{collapseNav()}}>
              <h6>Login</h6> 
             </Link>
           )}
           <span className="write">
-            <Link className="link" to="/write">
+            <Link className="link" to="/write" onClick={()=>{collapseNav()}}>
               <h6>Write</h6>
             </Link>
           </span>
