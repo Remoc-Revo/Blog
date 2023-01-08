@@ -63,8 +63,9 @@ $lightGreen: #b9e7e7;
 
     //NAVBAR
 
-    .navbar {
+    .navbar,.navbar-expanded {
       .container {
+        position:relative;
         padding: 10px 0px;
         display: flex;
         // align-items: center;
@@ -74,7 +75,7 @@ $lightGreen: #b9e7e7;
             width: 75%;//120px;
           }
         }
-        .links {
+        .links{
           display: flex;
           align-items: center;
           gap: 10px;
@@ -106,6 +107,10 @@ $lightGreen: #b9e7e7;
             }
           }
         }
+        
+      }
+      #menu-button{
+        display:none;
       }
     }
 
@@ -386,9 +391,24 @@ $lightGreen: #b9e7e7;
 }
 
 
-@media only screen and (max-width:690px){
+@media only screen and (max-width:768px){
+  //  WRITE
+
   .app{
     .container{
+      .add{
+    display:block;
+    
+  }
+    }
+  }
+  
+}
+
+@media only screen and (max-width:628px){
+  .app{
+    .container{
+      width:95%;
       .navbar{
         .container{
           .logo{
@@ -397,7 +417,7 @@ $lightGreen: #b9e7e7;
             }          
           }
           .links{
-            margin-left:30px
+            margin-left:10px;
           }
         }
       }
@@ -407,15 +427,62 @@ $lightGreen: #b9e7e7;
 
 @media only screen and (max-width:570px){
   .app{
+    display: flex;
+    margin-top:80px;
     .container{
+      width:97%;
+      .navbar-expanded,.navbar{
+        .container{     
+          position:fixed;
+          flex-direction: column;
+          left:2%;
+          top:3px;
+          width:70%;
+          height:500px;
+          background-color:teal;
+          transition: .5s ease;
+          justify-content: start;
+          .logo{
+            width:130px;
+          }
+          .links{
+            
+            opacity: 1;
+            display:block;
+            padding-left: 10px;
+            .link{
+              width: 100%;
+              border-bottom: 1px solid grey;
+            }
+            
+          }
+
+          
+        }
+      
+        #menu-button{
+          position:absolute;
+          right:5%;
+          top:3%;
+          display:block;
+          border: 0;
+          height: 40px;
+          width: 40px;
+          padding: 0.5rem;
+          border-radius: 50%;
+          background-color: $lightGreen;
+        }
+      }
       .navbar{
         .container{
-          #horizontal-navbar{
-            display:none;
+          height: inherit;
+          background-color: white;
+          .links{
+            display: none;
           }
         }
-         
       }
+      
     }
   }
   
