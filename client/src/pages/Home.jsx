@@ -27,7 +27,7 @@ const Home = () => {
       id: 1,
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! ",
-      img: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.freepik.com%2Ffree-photo%2Fwide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg&imgrefurl=https%3A%2F%2Fwww.freepik.com%2Fphotos%2Fnature&tbnid=huxi_OqxC54EPM&vet=12ahUKEwjEusnW37j8AhXpQaQEHReWBT4QMygAegUIARDdAQ..i&docid=phMLnQWV-ANRGM&w=626&h=418&q=nature&ved=2ahUKEwjEusnW37j8AhXpQaQEHReWBT4QMygAegUIARDdAQ",
+      img: "https://techcrunch.com/wp-content/uploads/2017/03/hazel_tech_fruitbrite.jpg?w=1390&crop=1",
     },
     {
       id: 2,
@@ -60,10 +60,11 @@ const Home = () => {
       <div className="posts">
         {posts.map((post) => (
           <div className="post" key={post.id}>
-            <div className="img">
+            {/* <div className="img">
               <img src={`${post.img}`} alt="" />
             </div>
-            
+             */}
+            <img src={`${post.img}`} alt="" />
 
             <div className="content">
               <Link className="link" to={`/post/${post.id}`}>

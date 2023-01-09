@@ -10,7 +10,8 @@ import { AuthContext } from "../context/authContext";
 import DOMPurify from "dompurify";
 
 const Single = () => {
-  const [post, setPost] = useState({});
+  //!!!UNCOMMENT THE CODE BELOW
+  // const [post, setPost] = useState({});
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,7 +24,8 @@ const Single = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(`/posts/${postId}`);
-        setPost(res.data);
+        //!!!UNCOMMENT THE CODE BELOW
+        // setPost(res.data);
       } catch (err) {
         console.log(err);
       }
@@ -45,10 +47,19 @@ const Single = () => {
     return doc.body.textContent
   }
 
+  const post={
+    userImg:"https://www.imdb.com/name/nm5756178/mediaviewer/rm950241025/?ref_=nm_ov_ph",
+    username:"Four Tees",
+    date:new Date(),
+    title:"The change is same",
+    desc:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+    cat:"food"
+  }
+
   return (
     <div className="single">
       <div className="content">
-        <img src={`../upload/${post?.img}`} alt="" />
+        <img src={`${post?.img}`} alt="" />
         <div className="user">
           {post.userImg && <img
             src={post.userImg}
@@ -58,7 +69,7 @@ const Single = () => {
             <span>{post.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>
           </div>
-          {currentUser.username === post.username && (
+          {currentUser!==null&&currentUser.username === post.username && (
             <div className="edit">
               <Link to={`/write?edit=2`} state={post}>
                 <img src={Edit} alt="" />
