@@ -80,6 +80,7 @@ $lightGreen: #b9e7e7;
           align-items: center;
           gap: 10px;
 
+          
           h6 {
             font-size: 16px;
             font-weight: 300;
@@ -141,7 +142,7 @@ $lightGreen: #b9e7e7;
         .post {
           display: flex;
           gap: 100px;
-
+          max-height:200px;
           &:nth-child(2n + 1) {
             flex-direction: row-reverse;
           }
@@ -163,7 +164,7 @@ $lightGreen: #b9e7e7;
 
             img {
               width: 100%;
-              max-height: 400px;
+              max-height: 300px;
               object-fit: cover;
             }
           }
@@ -173,13 +174,19 @@ $lightGreen: #b9e7e7;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-
+            
             h1 {
-              font-size: 48px;
+              font-size: 39px;
+              
             }
 
             p {
               font-size: 18px;
+              display: block;
+              white-space:initial;
+              overflow:hidden ;
+              text-overflow: ellipsis;
+
             }
 
             button {
@@ -391,15 +398,33 @@ $lightGreen: #b9e7e7;
 }
 
 
-@media only screen and (max-width:768px){
+@media only screen and (max-width:1340px){
   //  WRITE
 
   .app{
     .container{
       .add{
-    display:block;
-    
-  }
+        display:block;
+        
+      }
+      .home{
+        .posts{
+          .post{
+            // margin:0px;
+            .img{
+              max-width: 400px;
+              max-height: 180px;
+              
+            }
+            .content{
+              padding-top:10px;
+              h1{
+                font-size: 23px;
+              }
+            }
+          }
+        }
+      }
     }
   }
   
@@ -421,6 +446,21 @@ $lightGreen: #b9e7e7;
           }
         }
       }
+      .home{
+        .posts{
+          .post{
+            .img{
+              height:210px;
+              
+            }
+            .content{
+              h1{
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -428,12 +468,11 @@ $lightGreen: #b9e7e7;
 @media only screen and (max-width:570px){
   .app{
     display: flex;
-    margin-top:80px;
     .container{
       width:97%;
       .navbar-expanded,.navbar{
         .container{     
-          position:fixed;
+          // position:fixed;
           flex-direction: column;
           left:2%;
           top:3px;
@@ -444,7 +483,8 @@ $lightGreen: #b9e7e7;
           justify-content: start;
           z-index:1;
           .logo{
-            width:130px;
+            width:160px;
+            
           }
           .links{            
             gap:20px;
@@ -488,7 +528,35 @@ $lightGreen: #b9e7e7;
           }
         }
       }
-      
+      .add{
+        margin-top:100px;
+      }
+
+      .home{
+        .posts{
+          gap:5px;
+          .post{
+             margin-top:13px;
+            height:100px;
+            
+            .img{
+              width: 130px;
+              max-height: 80px;
+              
+            }
+            .content{
+              padding-top:2px;
+              h1{
+                font-size: 13px;
+              }
+              p{
+                font-size: 14px;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
     }
   }
   
