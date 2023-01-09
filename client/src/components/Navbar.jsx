@@ -1,16 +1,21 @@
 import React, { useContext,useState} from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 import Logo from "../img/logo.png";
 
 const Navbar = () => {
   const { currentUser, logout } = useContext(AuthContext);
   const [isNavExpanded,setIsNavExpanded]=useState(false);
+  const location=useLocation();
+  const queryString=location.search;
+  const urlParams=new URLSearchParams(queryString);
+  const cat=urlParams.get('cat');
 
   function collapseNav(){
     isNavExpanded=false;
   }
 
+  
   return (
     <div className={isNavExpanded?"navbar-expanded":"navbar"}>
       <div className="container" >
@@ -23,21 +28,22 @@ const Navbar = () => {
         
 
         <div className="links" >
-          <Link className="link" to="/?cat=art" onClick={()=>{collapseNav()}}>
+          <Link className={cat==='art'?"active link":"link"} to="/?cat=art" onClick={()=>{collapseNav()}}>
             <h6>ART</h6>
           </Link>
-          <Link className="link" to="/?cat=science" onClick={()=>{collapseNav()}}>
+          <Link className={cat==='science'?"active link":"link"} to="/?cat=science" onClick={()=>{collapseNav()}}>
             <h6>SCIENCE</h6>
           </Link>
-          <Link className="link" to="/?cat=technology" onClick={()=>{collapseNav()}}>
+          <Link className={cat==='technology'?"active link":"link"} to="/?cat=technology" onClick={()=>{collapseNav()}}>
+            <h6>TECHNOLOGY</h6>         
           </Link>
-          <Link className="link" to="/?cat=cinema" onClick={()=>{collapseNav()}}>
+          <Link className={cat==='cinema'?"active link":"link"} to="/?cat=cinema" onClick={()=>{collapseNav()}}>
             <h6>CINEMA</h6>
           </Link>
-          <Link className="link" to="/?cat=design" onClick={()=>{collapseNav()}}>
+          <Link className={cat==='design'?"active link":"link"} to="/?cat=design" onClick={()=>{collapseNav()}}>
             <h6>DESIGN</h6>
           </Link>
-          <Link className="link" to="/?cat=food" onClick={()=>{collapseNav()}}>
+          <Link className={cat==='food'?"active link":"link"} to="/?cat=food" onClick={()=>{collapseNav()}}>
             <h6>FOOD</h6>
           </Link>
           <span>{currentUser?.username}</span>
