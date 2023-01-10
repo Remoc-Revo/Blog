@@ -1,4 +1,4 @@
-import React, { useEffect, /*useState*/ } from "react";
+import React, { useEffect, useState } from "react";
 import Edit from "../img/edit.png";
 import Delete from "../img/delete.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -10,8 +10,7 @@ import { AuthContext } from "../context/authContext";
 import DOMPurify from "dompurify";
 
 const Single = () => {
-  //!!!UNCOMMENT THE CODE BELOW
-  // const [post, setPost] = useState({});
+  const [post, setPost] = useState({});
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,9 +22,8 @@ const Single = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const res = await axios.get(`/posts/${postId}`);
-        //!!!UNCOMMENT THE CODE BELOW
-        // setPost(res.data);
+        const res = await axios.get(`/posts/${postId}`);
+        setPost(res.data);
       } catch (err) {
         console.log(err);
       }
@@ -47,15 +45,15 @@ const Single = () => {
   //   return doc.body.textContent
   // }
 
-  const post={
-    img:"https://images.pexels.com/photos/6489663/pexels-photo-6489663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    userImg:"https://urbanologymag.com/wp-content/uploads/2016/03/MUNA_Main_1600x600_01.jpg",
-    username:"Four Tees",
-    date:new Date(),
-    title:"The change is same",
-    desc:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
-    cat:"food"
-  }
+  // const post={
+  //   img:"https://images.pexels.com/photos/6489663/pexels-photo-6489663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  //   userImg:"https://urbanologymag.com/wp-content/uploads/2016/03/MUNA_Main_1600x600_01.jpg",
+  //   username:"Four Tees",
+  //   date:new Date(),
+  //   title:"The change is same",
+  //   desc:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+  //   cat:"food"
+  // }
 
   return (
     <div className="single">
