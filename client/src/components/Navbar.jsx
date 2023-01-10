@@ -12,9 +12,11 @@ const Navbar = () => {
   const cat=urlParams.get('cat');
 
   function collapseNav(){
-    isNavExpanded=false;
+    setIsNavExpanded(false);
+    console.log("nav collapsed ",isNavExpanded)
+    
+    return;
   }
-
   
   return (
     <div className={isNavExpanded?"navbar-expanded":"navbar"}>
