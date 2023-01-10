@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import { Link, useLocation,useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 const Home = () => {
         //!!!!!uncomment the code below!!!!!
@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts${cat}`);
+        // const res = await axios.get(`/posts${cat}`);
         //uncomment the code below!!!!!
         // setPosts(res.data);
       } catch (err) {

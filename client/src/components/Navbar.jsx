@@ -5,7 +5,7 @@ import Logo from "../img/logo.png";
 
 const Navbar = () => {
   const { currentUser, logout } = useContext(AuthContext);
-  const [isNavExpanded,setIsNavExpanded]=useState(false);
+  var [isNavExpanded,setIsNavExpanded]=useState(false);
   const location=useLocation();
   const queryString=location.search;
   const urlParams=new URLSearchParams(queryString);

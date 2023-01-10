@@ -1,5 +1,5 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+// import axios from "axios";
+import React, { useEffect, /*useState*/ } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Menu = ({cat}) => {
@@ -10,8 +10,8 @@ const Menu = ({cat}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts/?cat=${cat}`);
-          //!!!UNCOMMENT THE LINE BELOW!!!
+        //!!!UNCOMMENT THE 2 LINES BELOW!!!
+        // const res = await axios.get(`/posts/?cat=${cat}`);
         // setPosts(res.data);
       } catch (err) {
         console.log(err);
