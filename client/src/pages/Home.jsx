@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation,useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
@@ -9,6 +9,7 @@ const Home = () => {
   //const [posts, setPosts] = useState([]);
 
   const cat = useLocation().search
+  const navigate=useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -71,7 +72,7 @@ const Home = () => {
                 <h1>{post.title}</h1>
               </Link>
               <p>{getText(post.desc)}</p>
-              <button>Read More</button>
+              <button onClick={()=>{navigate(`/post/${post.id}`)}}>Read More</button>
             </div>
           </div>
         ))}
